@@ -18,7 +18,6 @@ class UpdatePostsSeeder extends Seeder
             $category_id = Category::inRandomOrder()->first()->id;
             $post->category_id = $category_id;
             $post->update();
-            //dump($category_id);
         }
     }
 }
