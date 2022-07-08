@@ -8,6 +8,8 @@
                 <div class="card p-3">
                     <h4>Title: {{ $post->title }}</h4>
                     <p><b>Content:</b> {{ $post->content }}</p>
+                    <p><b>Categoria:</b> {{ $post->category->name }}</p>
+
                 </div>
                 <a class="btn btn-primary m-2" href="{{ route('admin.posts.index') }}">Back</a>
             </div>
