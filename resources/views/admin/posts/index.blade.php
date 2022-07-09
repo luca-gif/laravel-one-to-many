@@ -26,7 +26,7 @@
 
                                         <td>{{ $post->title }}</td>
                                         <td>{{ $post->content }}</td>
-                                        <td>{{ $post->category->name }}</td>
+                                        <td>{{ $post->category ? $post->category->name : '-' }}</td>
                                         <td class="w-25">
                                             <a class="btn btn-danger"
                                                 href="{{ route('admin.posts.show', $post) }}">Show</a>
@@ -34,8 +34,9 @@
                                             <a class="btn btn-success"
                                                 href="{{ route('admin.posts.edit', $post) }}">Edit</a>
 
-                                            <form class="d-inline" action="{{ route('admin.posts.destroy', $post) }}"
-                                                method="POST">
+                                            <form class="d-inline"
+                                                onclick="return confirm('Sei sicuro di voler eliminare {{ $post->title }}?')"
+                                                action="{{ route('admin.posts.destroy', $post) }}" method="POST">
                                                 @method('DELETE')
                                                 @csrf
                                                 <button type="submit" class="btn btn-dark"> Delete</button>

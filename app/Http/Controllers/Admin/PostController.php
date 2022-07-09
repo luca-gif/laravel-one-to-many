@@ -43,11 +43,13 @@ class PostController extends Controller
      */
     public function store(PostRequest $request)
     {
+
         $content = $request->all();
         $new_post = new Post();
         $content['slug'] = Post::slugGenerator($content['title']);
         $new_post->fill($content);
         $new_post->save();
+        // dd($content);
 
         return redirect()->route('admin.posts.show', $new_post);
     }
