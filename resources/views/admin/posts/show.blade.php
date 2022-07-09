@@ -12,7 +12,6 @@
                             <b>Categoria:</b> {{ $post->category->name }}
                         @endif
                     </p>
-
                 </div>
                 <a class="btn btn-primary m-2" href="{{ route('admin.posts.index') }}">Back</a>
             </div>

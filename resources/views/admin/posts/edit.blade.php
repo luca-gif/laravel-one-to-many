@@ -9,9 +9,11 @@
                     @method('PUT')
                     <div class="form-group">
 
-                        @foreach ($errors->all() as $error)
-                            <p class="alert alert-danger">{{ $error }}</p>
-                        @endforeach
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li class="alert alert-danger">{{ $error }}</li>
+                            @endforeach
+                        </ul>
 
                         <label for="title">Titolo</label>
                         <input type="text" class="form-control @error('title') is-invalid @enderror"
@@ -22,7 +24,8 @@
                         <select name="category_id" id="category">
                             <option value="">Seleziona una categoria</option>
                             @foreach ($categories as $category)
-                                <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                <option value="{{ $category->id }}" @if ($category->id == old('category_id', $post->category->id)) selected @endif>
+                                    {{ $category->name }}</option>
                             @endforeach
                         </select>
                     </div>

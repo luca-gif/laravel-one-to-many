@@ -42,7 +42,6 @@
                                                 <button type="submit" class="btn btn-dark"> Delete</button>
                                             </form>
                                         </td>
-
                                     </tr>
                                 @endforeach
                             </tbody>
@@ -51,6 +50,19 @@
                         {{ $posts->links() }}
 
                     </div>
+                </div>
+
+                <div class="card p-4">
+
+                    @foreach ($categories as $category)
+                        <h4>{{ $category->name }}</h4>
+
+                        @foreach ($category->posts as $post)
+                            <ul>
+                                <li><a href="{{ route('admin.posts.show', $post) }}">{{ $post->title }}</a></li>
+                            </ul>
+                        @endforeach
+                    @endforeach
                 </div>
             </div>
         </div>

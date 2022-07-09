@@ -25,7 +25,7 @@ class PostRequest extends FormRequest
     {
         return [
             'title' => 'required|min:3|max:255',
-            'content' => 'required|min:3|max:255'
+            'content' => 'required|min:10'
         ];
     }
 
@@ -36,8 +36,7 @@ class PostRequest extends FormRequest
             'title.min' => 'Lunghezza min :min caratteri',
             'title.max' => 'Lunghezza max :max caratteri',
             'content.required' => 'Aggiungi un messaggio',
-            'content.min' => 'Lunghezza min :min caratteri',
-            'content.max' => 'Lunghezza max :max caratteri'
+            'content.min' => 'Lunghezza min :min caratteri'
         ];
     }
 }
