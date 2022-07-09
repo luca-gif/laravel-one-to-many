@@ -7,9 +7,11 @@
                 <form action="{{ route('admin.posts.store') }}" method="POST">
                     @csrf
 
-                    @foreach ($errors->all() as $error)
-                        <p class="alert alert-danger">{{ $error }}</p>
-                    @endforeach
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li class="alert alert-danger">{{ $error }}</li>
+                        @endforeach
+                    </ul>
 
                     <div class="form-group">
                         <label for="title">Titolo</label>
@@ -20,6 +22,7 @@
 
                     <div class="form-group">
                         <select name="category" id="category">
+                            <option value="">Seleziona una categoria</option>
                             @foreach ($categories as $category)
                                 <option value="{{ $category->id }}">{{ $category->name }}</option>
                             @endforeach

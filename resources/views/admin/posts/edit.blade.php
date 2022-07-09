@@ -17,6 +17,16 @@
                         <input type="text" class="form-control @error('title') is-invalid @enderror"
                             value="{{ old('title', $post->title) }}" name="title" id="title" placeholder="Title">
                     </div>
+
+                    <div class="form-group">
+                        <select name="category" id="category">
+                            <option value="">Seleziona una categoria</option>
+                            @foreach ($categories as $category)
+                                <option value="{{ $category->id }}">{{ $category->name }}</option>
+                            @endforeach
+                        </select>
+                    </div>
+
                     <div class="form-group">
                         <label for="content">Descrizione</label>
                         <textarea name="content" class="form-control @error('title') is-invalid @enderror" id="content" cols="50"

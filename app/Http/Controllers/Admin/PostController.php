@@ -49,8 +49,6 @@ class PostController extends Controller
         $new_post->fill($content);
         $new_post->save();
 
-
-
         return redirect()->route('admin.posts.show', $new_post);
     }
 
@@ -76,8 +74,9 @@ class PostController extends Controller
     public function edit($id)
     {
         $post = Post::find($id);
+        $categories = Category::all();
 
-        return view('admin.posts.edit', compact('post'));
+        return view('admin.posts.edit', compact('post', 'categories'));
     }
 
     /**

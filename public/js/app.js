@@ -49358,28 +49358,54 @@ var app = new Vue({
     isError: false
   }
 });
-$().ready(function () {
-  $("form").submit(function (event) {
-    $("#error-title").hide();
-    $("#error-content").hide();
+/* $().ready(function() {
+    $("form").submit(function(event) {
+        $("#error-title").hide();
+        $("#error-content").hide();
 
-    if ($("#title").val().length === 0 || $("#content").val().length === 0) {
-      $("#error-title").show("slow").text("Il titolo è un campo obbligatorio").fadeOut(5000);
-      $("#error-content").show("slow").text("La descrizione è un campo obbligatorio").fadeOut(5000);
-      isError = true;
-    } else if ($("#title").val().length < 3 || $("#content").val().length < 3) {
-      $("#error-title").show("slow").text("Deve contenere minimo 3 caratteri").fadeOut(5000);
-      $("#error-content").show("slow").text("La descrizione deve contenere minimo 3 caratteri").fadeOut(5000);
-      isError = true;
-    } else if ($("#title").val().length > 100 || $("#content").val().length > 500) {
-      $("#error-title").show("slow").text("Può contenere massimo 100 caratteri").fadeOut(5000);
-      $("#error-content").show("slow").text("Può contenere massimo 500 caratteri").fadeOut(5000);
-      isError = true;
-    }
-
-    event.preventDefault();
-  });
-});
+        if (
+            $("#title").val().length === 0 ||
+            $("#content").val().length === 0
+        ) {
+            $("#error-title")
+                .show("slow")
+                .text("Il titolo è un campo obbligatorio")
+                .fadeOut(5000);
+            $("#error-content")
+                .show("slow")
+                .text("La descrizione è un campo obbligatorio")
+                .fadeOut(5000);
+            isError = true;
+        } else if (
+            $("#title").val().length < 3 ||
+            $("#content").val().length < 3
+        ) {
+            $("#error-title")
+                .show("slow")
+                .text("Deve contenere minimo 3 caratteri")
+                .fadeOut(5000);
+            $("#error-content")
+                .show("slow")
+                .text("La descrizione deve contenere minimo 3 caratteri")
+                .fadeOut(5000);
+            isError = true;
+        } else if (
+            $("#title").val().length > 100 ||
+            $("#content").val().length > 500
+        ) {
+            $("#error-title")
+                .show("slow")
+                .text("Può contenere massimo 100 caratteri")
+                .fadeOut(5000);
+            $("#error-content")
+                .show("slow")
+                .text("Può contenere massimo 500 caratteri")
+                .fadeOut(5000);
+            isError = true;
+        }
+         event.preventDefault();
+    });
+}); */
 
 /***/ }),
 

@@ -38,7 +38,7 @@ const app = new Vue({
     },
 });
 
-$().ready(function() {
+/* $().ready(function() {
     $("form").submit(function(event) {
         $("#error-title").hide();
         $("#error-content").hide();
@@ -83,6 +83,6 @@ $().ready(function() {
                 .fadeOut(5000);
             isError = true;
         }
-        event.preventDefault();
+         event.preventDefault();
     });
-});
+}); */
